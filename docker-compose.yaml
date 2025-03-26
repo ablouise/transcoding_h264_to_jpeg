@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  h264-converter:
+    build: .
+    volumes:
+      - ./h264:/data/h264
+      - ./output_jpegs:/data/output_jpegs
+    environment:
+      - GST_DEBUG=2
+    restart: unless-stopped
